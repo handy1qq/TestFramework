@@ -7,8 +7,11 @@
 //
 
 #import "the_first_table.h"
-
-@interface the_first_table ()
+#import "Get_method.h"
+#import "the_second_table.h"
+#import "wifi.h"
+#import "GROUD.h"
+@interface the_first_table ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -16,83 +19,72 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _array=[NSMutableArray array];
+    _array1=[NSMutableArray array];
+      _qucong=[NSMutableArray array];
+     _qucong1=[NSMutableArray array];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+   GROUD *view=[[GROUD alloc]init];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    
+    int y=sizeof(view.Array1);
+    int t=view.Array1.count;
+
+      NSLog(@"!!!!!!!!!!%@",view.array);
+  // NSLog(@"!!!!!!!!!!%@",view.Array1[47]);
+   // NSLog(@"!!!!!!!!!!%d,%d",t,y);
+    
+    
+        for (int s=0; s<view.Array1.count; s++) {
+        
+           NSString *a= [view.Array1[s] objectAtIndex:0];
+            NSLog(@"!!!!!!!!!!%@",a);
+            [_array1 addObject:a];
+        }
+
+    NSSet *set = [NSSet setWithArray:_array1];
+    _qucong=[set sortedArrayUsingDescriptors:_qucong1];
+ 
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return self.qucong.count;
 }
 
-/*
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
+    NSMutableArray *mm = [[NSMutableArray alloc] init];
+    mm = self.qucong[indexPath.row];
+    cell.textLabel.text = mm;
+    //_string=cell.textLabel.text;
+    //  NSLog(@"%@",_string);
     return cell;
 }
-*/
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    _table1_talbe2=cell.textLabel.text;
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    //NSLog(@"%@",cell.textLabel.text);
+    
+    the_second_table *oneController = [[self storyboard]instantiateViewControllerWithIdentifier:@"viewfirst"];
+    oneController.table1_talbe2=self.table1_talbe2;
+   
+    [[self navigationController] pushViewController:oneController animated:YES];
+    
+    
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

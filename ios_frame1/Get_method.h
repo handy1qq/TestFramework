@@ -11,4 +11,5 @@
 @interface Get_method : NSObject
 @property(nonatomic ,strong)  NSMutableArray *array;
 @property(nonatomic ,strong)  NSMutableArray *array1;
+- (void)runTests;
 @end

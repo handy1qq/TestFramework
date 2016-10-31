@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface the_first_table : UITableViewController
-
+@property(nonatomic ,strong)  NSMutableArray *array;
+@property(nonatomic ,strong)  NSMutableArray *array1;
+@property(nonatomic ,strong)  NSMutableArray *qucong;
+@property(nonatomic ,strong)  NSMutableArray *qucong1;
+@property(nonatomic ,strong) NSString *table1_talbe2;
 @end

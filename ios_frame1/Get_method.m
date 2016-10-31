@@ -28,62 +28,15 @@
         SEL selector = method_getName(method);
         NSString *name = NSStringFromSelector(selector);
         _m = [name componentsSeparatedByString:@"__"];
-        if (_m.count>=4) {
+        if (_m.count>3) {
             [_array addObject: _m];
-            //  NSLog(@"pppp%@",_array);
+           // NSLog(@"~~~~~~~~~%@",name);
             
         }
     }
 }
 
-//************************************************************************************
-//************************************************************************************
 
-
-
--(void)wifi__AUTOTEST__emvUpdateParamq__emvUpdateParam_fun01{
-    
-    printf("恭喜你，");
-    
-}
-
-
--(void)wifi__AUTOTEST__emvUpdateParamq__emvUpdateParam_fun02{
-    
-    NSLog(@"恭喜你，成功了2");
-    
-}
-
--(void)wifi__MANTEST__emvUpdateParam__emvUpdateParam_fun01{
-    
-    NSLog(@"恭喜你，成功了3");
-    
-}
-
--(void)wifi__MANTEST__emvUpdateParam__emvUpdateParam_fun02{
-    
-    NSLog(@"恭喜你，成功了4");
-    
-}
--(void)wifi__MANTEST__emvUpdateParam__emvUpdateParam_tol01{
-    NSLog(@"恭喜你，成功了5");
-    
-}
-
-
--(void)wifi__MANTEST__emvUpdateParam__emvUpdateParam_tol02{
-    NSLog(@"恭喜你，成功了6");
-    
-    
-}
--(void)wifi__SEMI_AUTOTEST__emvUpd__emvUpdateParam_tol01{
-    NSLog(@"恭喜你，成功了7");
-    
-}
--(void)wifi__SEMI_AUTOTEST__emvUpd__emvUpdateParam_tol02{
-    NSLog(@"恭喜你，成功了8");
-    
-}
 
 @end
 

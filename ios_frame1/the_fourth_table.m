@@ -7,8 +7,11 @@
 //
 
 #import "the_fourth_table.h"
-
-@interface the_fourth_table ()
+#import "Get_method.h"
+#import "wifi.h"
+#import "GROUD.h"
+#import "gps.h"
+@interface the_fourth_table ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -16,83 +19,120 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _qucong1=@[[[NSSortDescriptor alloc] initWithKey:nil ascending:YES]];
+    _array=[NSMutableArray array];
+    _addstring=[NSMutableArray array];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.table2to41_cell= self.table2to4_cell;
+   // NSLog(@"**********%@",_table2to41_cell);
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+      _qucong=[NSMutableArray array];
+    
+    self.talbe4= self.table3_talbe4;
+    
+     GROUD *view=[[GROUD alloc]init];
+    
+
+ 
+        for (int s=0; s<view.Array1.count; s++){
+
+        if ([view.Array1[s] containsObject:self.table3_talbe4]) {
+            
+            if ([view.Array1[s] containsObject:_table2to41_cell]) {
+                
+                if ([view.Array1[s] containsObject:self.table2_cell]) {
+                    
+                
+                    NSString *a= [view.Array1[s] objectAtIndex:3];
+                    [_array addObject:a];
+                
+             
+                
+           
+            //NSLog(@"!!!!!!%@",_array);
+            }
+        }
+        }
+        NSSet *set = [NSSet setWithArray:_array];
+        self.qucong1=[set sortedArrayUsingDescriptors:_qucong];
+        
+       
+    }
+
 }
+    
+    
+//    for (int i=0; i<view.array.count; i++) {
+//        //wifi的第i行，第3列；
+//        [self.array addObject: view.array[i][3]];
+//        
+//        for (int j=0; j<3; j++) {
+//            
+//            NSString *str1=view.array[i][2];
+//            NSString *str2=view.array[i][1];
+//            NSString *str3=view.array[i][3];
+
+            //_table2_cell是the_second_table的值
+//            if ([str1 isEqualToString:self.table2_cell ] ) {
+//              
+//                if ( [str2 isEqualToString:_table2to41_cell] ){
+//                    [_addstring addObject:str3];
+//                  //  NSLog(@"qqq--------%@",str3);
+//                    NSSet *set = [NSSet setWithArray:_addstring];
+//                 self.qucong=[set sortedArrayUsingDescriptors:_qucong1];
+//                }
+          //  }
+            
+       // }
+        
+    
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+     return _qucong1.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
+    NSMutableArray *mm = [[NSMutableArray alloc] init];
     
-    // Configure the cell...
-    
+    mm = _qucong1[indexPath.row];
+    cell.textLabel.text = mm;
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *table44  =cell.textLabel.text;
+    NSString *str = self.talbe4;
+    NSString *str2=@"__";
+    NSString  *str3 = [str stringByAppendingString:str2];
+     NSString  *str4 = [str3 stringByAppendingString:self.table2to41_cell];
+     NSString  *str5 = [str4 stringByAppendingString:str2];
+    NSString  *str6 = [str5 stringByAppendingString:self.table2_cell];
+    NSString  *str7 = [str6 stringByAppendingString:str2];
+    NSString  *str8 = [str7 stringByAppendingString:table44];
+    [self cellclick:str8];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+-(void) cellclick:(NSString *)methodName1
+{
+    NSString *k=self.table3_talbe4;
+    GROUD *p=[[GROUD alloc]init];
+    
+    p.hangshuM=methodName1;
+    SEL customSelector = NSSelectorFromString(k);
+    [p performSelector:customSelector  withObject:nil];
+    
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

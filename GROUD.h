@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface GROUD : NSObject
-
+@property(nonatomic ,strong)  NSMutableArray *array;
+@property(nonatomic ,strong)  NSMutableArray *Array1;
+@property(nonatomic ,strong) NSString *hangshuM;
 @end

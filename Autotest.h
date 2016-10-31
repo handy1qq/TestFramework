@@ -10,4 +10,6 @@
 
 @interface Autotest : NSObject
 
+@property(nonatomic ,strong)  NSMutableArray *array;
+
 @end

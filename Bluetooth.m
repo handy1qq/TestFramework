@@ -20,47 +20,47 @@
 
 
 
--(void)lanya__AUTOTEST__abc__emvUpdateParam_01{
+-(void)Bluetooth__AUTOTEST__abc__emvUpdateParam_01{
     
-    NSLog(@"qqqweqwe");
-    
-}
-
-
--(void)lanya__AUTOTEST__acv__emvUpdateParam_fun02{
-    
-    NSLog(@"wwwwsdfbswwww");
-    
-}
-
--(void)lanya__MANTEST__aaa__emvUpdateParam_fun01{
-    
-    NSLog(@"eeeefdfdee");
-    
-}
-
--(void)lanya__MANTEST__bbbb__emvUpdateParam_fun02{
-    
-    NSLog(@"w");
-    
-}
--(void)lanya__MANTEST__cccc__emvUpdateParam_tol01{
-    NSLog(@"rrrrrrr");
+    NSLog(@"华智融qq");
     
 }
 
 
--(void)lanya__MANTEST__dddd__emvUpdateParam_tol02{
-    NSLog(@"恭喜你，成功了6");
+-(void)Bluetooth__AUTOTEST__acv__emvUpdateParam_fun02{
+    
+    NSLog(@"华智融qql");
+    
+}
+
+-(void)Bluetooth__MANTEST__aaa__emvUpdateParam_fun01{
+    
+    NSLog(@"华智融qqk");
+    
+}
+
+-(void)Bluetooth__MANTEST__bbbb__emvUpdateParam_fun02{
+    
+    NSLog(@"华智融qqj");
+    
+}
+-(void)Bluetooth__MANTEST__cccc__emvUpdateParam_tol01{
+    NSLog(@"华智融qqr");
+    
+}
+
+
+-(void)Bluetooth__MANTEST__dddd__emvUpdateParam_tol02{
+    NSLog(@"v6");
     
     
 }
--(void)lanya__SEMI_AUTOTEST__eeee__emvUpdateParam_tol01{
-    NSLog(@"恭喜你，成功了7");
+-(void)Bluetooth__SEMI_AUTOTEST__eeee__emvUpdateParam_tol01{
+    NSLog(@"华智融qq7");
     
 }
--(void)lanya__SEMI_AUTOTEST__effff__emvUpdateParam_tol02{
-    NSLog(@"恭喜你，成功了8");
+-(void)Bluetooth__SEMI_AUTOTEST__effff__emvUpdateParam_tol02{
+    NSLog(@"华智融qq8");
     
 }
 
